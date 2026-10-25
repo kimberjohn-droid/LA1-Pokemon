@@ -21,3 +21,29 @@ try:
         print("Guess the Pokemon!")
         print("Height:", height / 10, "meters")
         print("Weight:", weight / 10, "kg")
+        print("Abilities:")
+
+        for ability in abilities:
+          print("-", ability["ability"]["name"])
+
+          for attempt in range(3):
+            guess = input("Enter your guess: ").lower().strip()
+
+            if guess not in pokemon_list:
+                print("Invalid Pokemon name. Try again!")
+            elif guess == name:
+                print("Correct! You guessed", name.capitalize())
+                break
+            else:
+                print("Wrong guess!")
+
+        else:
+            print("The Pokemon was", name.capitalize())
+
+    else:
+        print("Could not get Pokemon data.")
+
+except requests.exceptions.RequestException:
+    print("Network error. Check your internet connection.")
+
+
