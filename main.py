@@ -24,9 +24,9 @@ try:
         print("Abilities:")
 
         for ability in abilities:
-          print("-", ability["ability"]["name"])
+            print("-", ability["ability"]["name"])
 
-          for attempt in range(3):
+        for attempt in range(3):
             guess = input("Enter your guess: ").lower().strip()
 
             if guess not in pokemon_list:
@@ -45,5 +45,3 @@ try:
 
 except requests.exceptions.RequestException:
     print("Network error. Check your internet connection.")
-
-
